@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Programming-Theory-Repo.sln"
+    "dotnet.defaultSolution": "Programming-Theory-Repo.sln",
+    "git.ignoreLimitWarning": true
 }
