@@ -1199,6 +1199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2f1cc738bb9c04c84cdcf4671d7416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameOver: 0
   gameOverUI: {fileID: 1094945948}
   enemies:
   - {fileID: 4994097358517638702, guid: 3e2f1b4af1a78e74da608af4bb89dac2, type: 3}
@@ -3068,7 +3069,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 557263120}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: GoBackToTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

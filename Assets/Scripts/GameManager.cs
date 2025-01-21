@@ -2,7 +2,9 @@ using UnityEngine;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 public class GameManager : MonoBehaviour
 {
     private float boundary = 10;
@@ -24,12 +26,21 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (gameOverUI == null)
+        {
+            gameOverUI = GameObject.Find("GameOverUI");
+        }
+        if (gameOverUI != null)
+        {
+            gameOverUI.SetActive(false); 
+        }
         StartWave();
     }
 
@@ -68,8 +79,12 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
     }
 
-    public void GoBackToTitle()
+    public void QuitGame()
     {
-        SceneManager.LoadScene(0);
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
     }
 }
